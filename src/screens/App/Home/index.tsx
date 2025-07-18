@@ -5,39 +5,29 @@ import useStyles from './style';
 import icons from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { useDrawerStatus } from '@react-navigation/drawer';
+import CustomHeader from '../../../components/CustomHeader';
 
 const Home = ({}) => {
   const {styles, colors} = useStyles();
   const navigation = useNavigation();
 
-const isDrawerOpen = useDrawerStatus() === 'open';
-
-console.log("Is Drawer Open ", isDrawerOpen)
   return (
     <>
+      <CustomHeader  showMenu backgroundColor={'transparent'}
+      rightIconColor={colors.TEXT}
+  
+      />
     <View style={{
       flex:1,
-      // alignItems:'center',
-      // justifyContent:'center'
+      alignItems:'center',
+      justifyContent:'center'
     }}>
 
-      <StatusBarComponent backgroundColor={colors.BACKGROUND}   />
+     <Text>
+      This is Hello From Drawer Home Screen
+     </Text>
 
-      <TouchableOpacity
-      onPress={()=>{
-        
-          (navigation as any).openDrawer();
-        
-      }}
-      >
-        <Image source={icons.DRAWER_ICON} width={20} height={20} style={{
-          width:20,
-          height:20,
-          position:'absolute',
-          top:20,
-          left:20,
-        }}/>
-      </TouchableOpacity>
+  
     </View>
     </>
   );

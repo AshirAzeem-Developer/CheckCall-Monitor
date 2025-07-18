@@ -6,7 +6,7 @@ import {
   DrawerItemList,
   DrawerContentComponentProps,
 } from '@react-navigation/drawer';
-import { Alert, Image } from 'react-native';
+import { Alert, Image, useColorScheme } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 
@@ -32,10 +32,10 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
   return (
     <>
       <Image
-        source={icons.LOGO}
+        source={images.DRAWER_LOGO}
         style={{
-          width: screen.width * 0.5,
-          height: screen.height * 0.05,
+          width: screen.width * 0.45,
+          height: screen.width * 0.18,
           alignSelf: 'flex-start',
           marginTop: screen.height * 0.05,
           // marginBottom: 20,
@@ -49,8 +49,8 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
           label="Logout"
           icon={() => (
             <Image
-              tintColor={'green'}
-              source={icons.LOGO}
+              // tintColor={'blax'}
+              source={icons.LOGOUT}
               width={20}
               height={20}
               style={{
@@ -60,7 +60,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
             />
           )}
           onPress={handleLogout}
-          labelStyle={{ color: 'green', fontSize: 16 }}
+          labelStyle={{  fontSize: 16 }}
         />
       </DrawerContentScrollView>
     </>
@@ -71,12 +71,12 @@ export default function DrawerNavigator() {
   return (
     <Drawer.Navigator
       screenOptions={{
-        swipeEnabled: false,
+        swipeEnabled: true,
         drawerStyle: {
-          backgroundColor: 'red',
+          backgroundColor:'white',
         },
-        drawerActiveTintColor: 'black',
-        drawerInactiveTintColor: 'green',
+        drawerActiveTintColor: '#00BFFF',
+        drawerInactiveTintColor: 'black',
         drawerLabelStyle: {
           fontSize: 16,
           fontWeight: 'normal',
@@ -92,8 +92,8 @@ export default function DrawerNavigator() {
           headerShown: false,
           drawerIcon: () => (
             <Image
-              tintColor={'green'}
-              source={icons.LOGO}
+              tintColor={'#00BFFF'}
+              source={icons.HOME}
               width={20}
               height={20}
               style={{
