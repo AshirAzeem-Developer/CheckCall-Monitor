@@ -13,7 +13,7 @@ const AddSite = ({}) => {
 
   return (
     <>
-      <CustomHeader  showMenu backgroundColor={'transparent'}
+      <CustomHeader title='Add Site' showMenu backgroundColor={'transparent'}
       rightIconColor={colors.TEXT}
   
       />

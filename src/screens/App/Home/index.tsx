@@ -1,34 +1,34 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, useColorScheme, View} from 'react-native';
 import StatusBarComponent from '../../../components/global/StatusBarComponent';
 import useStyles from './style';
 import icons from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { useDrawerStatus } from '@react-navigation/drawer';
 import CustomHeader from '../../../components/CustomHeader';
+import { screen } from '../../../utils/constant';
 
 const Home = ({}) => {
-  const {styles, colors} = useStyles();
+  const {styles, colors,sizes} = useStyles();
   const navigation = useNavigation();
 
   return (
     <>
-      <CustomHeader  showMenu backgroundColor={'transparent'}
+      <CustomHeader  title='Dashboard' showMenu backgroundColor={useColorScheme() === 'dark' ? 'white' :'white'}
       rightIconColor={colors.TEXT}
-  
       />
-    <View style={{
-      flex:1,
-      alignItems:'center',
-      justifyContent:'center'
-    }}>
+      <View style={{
+        backgroundColor:'white',
+        height:screen.height,
+        padding:screen.width*0.06
 
-     <Text>
-      This is Hello From Drawer Home Screen
-     </Text>
-
-  
-    </View>
+      }}>
+<Text>
+  Hello
+</Text>
+      </View>
+    
+    
     </>
   );
 };

@@ -13,7 +13,7 @@ const CustomersList = ({}) => {
 
   return (
     <>
-      <CustomHeader  showMenu backgroundColor={'transparent'}
+      <CustomHeader title='Customer List'  showMenu backgroundColor={'transparent'}
       rightIconColor={colors.TEXT}
   
       />

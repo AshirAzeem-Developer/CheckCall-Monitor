@@ -13,7 +13,7 @@ const AddShift = ({}) => {
 
   return (
     <>
-      <CustomHeader  showMenu backgroundColor={'transparent'}
+      <CustomHeader title='Add Shift'  showMenu backgroundColor={'transparent'}
       rightIconColor={colors.TEXT}
   
       />

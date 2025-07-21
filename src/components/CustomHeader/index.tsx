@@ -17,6 +17,7 @@ import useStyles from './style';
 import images from '../../assets/images';
 import icons from '../../assets/icons';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
+import { screen } from '../../utils/constant';
 
 interface CustomHeaderProps {
   title?: string;
@@ -38,7 +39,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({
   rightIcon,
   rightIconColor,
   backgroundColor = '#13714C',
-  textColor = '#fff',
+  textColor = '#000000',
   translucent = false,
 }) => {
   const navigation = useNavigation();
@@ -67,7 +68,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({
           },
         ]}>
         {/* Back Button */}
-        {showBackButton ? (
+        {showBackButton && (
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={{
@@ -82,18 +83,15 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({
               tintColor={textColor}
             />
           </TouchableOpacity>
-        ) : (
-          <View style={{
-            marginLeft: 16,
-          }} />
-        )}
+        ) }
 
         {/* Title or Logo */}
        
           <Text style={{
-            color: textColor,
-            fontSize: 18,
+            color: useColorScheme() === "dark" ? '#fff':'#000',
+            fontSize: screen.width*0.065,
             fontWeight: 'bold',
+            marginLeft:screen.width*0.06
           }}>{title}</Text>
        
 

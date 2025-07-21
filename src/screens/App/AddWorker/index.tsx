@@ -13,7 +13,7 @@ const AddWorker = ({}) => {
 
   return (
     <>
-      <CustomHeader  showMenu backgroundColor={'transparent'}
+      <CustomHeader title='Add Worker'  showMenu backgroundColor={'transparent'}
       rightIconColor={colors.TEXT}
   
       />

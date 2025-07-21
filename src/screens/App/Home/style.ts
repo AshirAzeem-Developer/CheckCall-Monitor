@@ -10,8 +10,13 @@ const useStyles = () => {
 
   const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      // flex: 1,
+      height:sizes.HEIGHT*0.9,
       backgroundColor: colors.BACKGROUND,
+    },
+    heading:{
+      fontSize:sizes.WIDTH*0.1,
+      fontWeight:'bold'
     },
     contStyle: {
       marginTop: sizes.HEIGHT * 0.04,

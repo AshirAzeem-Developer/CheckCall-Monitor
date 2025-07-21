@@ -1,6 +1,3 @@
-
-
-
 import { StyleSheet } from 'react-native';
 import { useColors } from '../../constants/color';
 import { useSizes } from '../../constants/size';
@@ -17,22 +14,16 @@ const useStyles = () => {
         width: screen.width,
         height: screen.height,
         backgroundColor: colors.BACKGROUND,
-        // backgroundColor: 'green',
         alignItems: 'center',
         justifyContent: 'center',
-        position: 'absolute',
-        zIndex: 999999,
       },
       header: {
       width: screen.width,
       height: screen.height*0.1,
       backgroundColor: colors.BACKGROUND,
-      // backgroundColor: 'green',
       flexDirection:'row',
       alignItems: 'center',
       justifyContent: 'space-between',
-      position: 'absolute',
-      zIndex: 999999,
     },
   });
 
