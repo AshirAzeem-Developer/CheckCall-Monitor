@@ -6,10 +6,12 @@ import icons from '../../../assets/icons';
 import { useNavigation } from '@react-navigation/native';
 import { useDrawerStatus } from '@react-navigation/drawer';
 import CustomHeader from '../../../components/CustomHeader';
+import DynamicTable from '../../../components/DynamicTable';
 
 const CustomersList = ({}) => {
   const {styles, colors} = useStyles();
   const navigation = useNavigation();
+  const titles:string[] = ['Customer Name' , 'Email' , 'Phone' , 'Active Linked Sites'] 
 
   return (
     <>
@@ -18,14 +20,13 @@ const CustomersList = ({}) => {
   
       />
     <View style={{
-      flex:1,
-      alignItems:'center',
-      justifyContent:'center'
+      padding:'5%'
     }}>
 
      <Text>
       This is Hello From Drawer CustomersList Screen
      </Text>
+     <DynamicTable tableHeaders={titles}/>
 
   
     </View>
